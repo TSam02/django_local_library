@@ -41,7 +41,7 @@ class BookListView(generic.ListView):
     context_object_name = 'book_list'   # your own name for the list as a template variable
     template_name = 'book_list.html'  # Specify your own template name/location
 
-    paginate_by = 2
+    paginate_by = 10
 
     def get_queryset(self) -> QuerySet[Any]:
         return super().get_queryset()
@@ -63,6 +63,7 @@ class AuthorListView(generic.ListView):
     model = Author
     context_object_name = 'author_list'
     template_name = 'author_list.html'
+    paginate_by = 10
 
     def get_queryset(self) -> QuerySet[Any]:
         return super().get_queryset()
